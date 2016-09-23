@@ -108,7 +108,8 @@ public class RpcFramework {
 
         System.out.println("Get remote service " + interfaceClass.getName() + " from server " + host + ":" + port);
 
-        return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(),
+        return (T) Proxy.newProxyInstance(
+                interfaceClass.getClassLoader(),
                 new Class<?>[]{interfaceClass},
                 new InvocationHandler() {
                     @Override
